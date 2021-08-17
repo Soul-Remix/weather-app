@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div class="search-content">
+            <h1>WeatherApp</h1>
+            <form action="">
+                <label for="search"></label>
+                <input type="text" name="city" id="search" placeholder="your city" required maxlength="18">
+                <button type="submit" id="search-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                        </path>
+                    </svg></button>
+            </form>
+        </div>
+        <div class="weather-card">
+            <button class="convert-btn">C°</button>
+            <div class="weather-result">
+                <div class="result">
+                    <div class="temps-result">
+                        <h2 class="temp"><button class="convert-btn">C°</button></h2>
+                        <p class="city"></p>
+                    </div>
+                    <div class="forecast-result">
+                        <h2 class="forecast"></h2>
+                        <p class="forecast-desc"></p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="info-desc">
+                        <p class="info-title">Feels like</p>
+                        <p class="info-result" id="feel"></p>
+                    </div>
+                    <div class="info-desc">
+                        <p class="info-title">Humidity</p>
+                        <p class="info-result" id="hum"></p>
+                    </div>
+                    <div class="info-desc">
+                        <p class="info-title">visibility</p>
+                        <p class="info-result" id="vis"></p>
+                    </div>
+                    <div class="info-desc">
+                        <p class="info-title">Min temp</p>
+                        <p class="info-result" id="min"></p>
+                    </div>
+                    <div class="info-desc">
+                        <p class="info-title">Max temp</p>
+                        <p class="info-result" id="max"></p>
+                    </div>
+                </div>
+            </div>
+            <button class="back-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z">
+                    </path>
+                </svg></button>
+        </div>
+        <div class="error hide">
+            <div class="cont">
+                <div class="nav">Error 404</div>
+                <div class="desc">
+                    <h2>Not found</h2>
+                    <p>please try again or enter another city name</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="overlay hide"></div>
+    </main>
+
+</body>
+
+</html>

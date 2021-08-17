@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+:root {
+  --green: #45b29d;
+  --light-green: #50cfb6;
+  --black: #403e39;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*::before::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  color: var(--black);
+  background-color: lightgray;
+  background-image: url("../images/sunny.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+button:hover {
+  background-color: var(--light-green);
+}
+
+/* Search-page */
+
+.search-content {
+  width: clamp(330px, 65%, 700px);
+  text-align: center;
+  position: relative;
+  transform: translateY(0px);
+  transition: all 0.8s ease;
+  background-color: white;
+  opacity: 0.7;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  padding: 50px;
+  padding-top: 25px;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.search-content:focus-within {
+  opacity: 1;
+}
+
+.search-content h1 {
+  font-size: clamp(3em, 5em, 8vw);
+  margin-bottom: 30px;
+  margin-top: 25px;
+  font-style: italic;
+  color: var(--black);
+}
+
+.search-content form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-content input {
+  font-size: clamp(2em, 3em, 5vw);
+  border: 0px;
+  color: var(--black);
+  outline: none;
+  border-bottom: 2px solid black;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.search-content input:focus {
+  border-color: var(--green);
+}
+
+::placeholder {
+  opacity: 0.5;
+}
+
+.search-content button {
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: var(--green);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.search-content button:hover {
+  background-color: var(--light-green);
+}
+
+/* Result-page */
+.weather-card {
+  width: clamp(330px, 70%, 1000px);
+  margin: auto;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: none;
+  transition: all 0.8s ease;
+  transform: translateY(0px);
+}
+
+.convert-btn {
+  position: absolute;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: white;
+  background-color: var(--green);
+  top: -10px;
+  left: -10px;
+}
+
+.weather-result {
+  display: flex;
+  flex-flow: column wrap;
+  width: 90%;
+  padding: 5%;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+.result {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.result h2 {
+  font-size: clamp(3em, 5em, 8vw);
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.result p {
+  margin-top: 5px;
+  font-size: clamp(1.3em, 1.8em, 4vw);
+  text-align: center;
+}
+
+.result .temp {
+  position: relative;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.info p {
+  font-size: clamp(1.3em, 1.5em, 3vw);
+  text-align: center;
+  padding-left: 8px;
+}
+
+.info .info-title {
+  color: var(--green);
+  margin-bottom: 5px;
+}
+
+.info .info-result {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.back-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: white;
+  background-color: var(--green);
+  padding: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  .result {
+    flex-flow: column wrap;
+  }
+}
+
+.error {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.error .nav {
+  background-color: crimson;
+  font-size: 2.5rem;
+  margin-bottom: 0px;
+}
+
+.error .desc {
+  margin-top: 0px;
+  background-color: white;
+  font-size: 1.5rem;
+}
+
+.error .desc h2 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hide {
+  display: none;
+}
